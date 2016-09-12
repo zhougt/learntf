@@ -9,3 +9,5 @@ model = Sequential([
     Dense(10),
     Activation('softmax')
 ])
+
+print 'done!'
