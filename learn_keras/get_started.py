@@ -3,7 +3,7 @@ import numpy as np
 from keras.models import Sequential
 from keras.optimizers import SGD
 from keras.utils.np_utils import to_categorical
-from keras.utils.visualize_util import plot
+from keras.utils.visualize_util import model_to_dot
 
 from keras.layers import Dense
 from keras.layers import Activation
@@ -301,37 +301,38 @@ def model_lstm_merged():
     return model
 
 
-def plot_model(model, file):
-    plot(model, to_file=file)
+def viz_model(model, file):
+    dot = model_to_dot(model, show_shapes=True, show_layer_names=False)
+    dot.write_pdf(file)
 
 
 if __name__ == '__main__':
     model = model_binary()
-    plot(model, 'model_binary.png')
+    viz_model(model, 'results/model_binary.pdf')
 
     model = model_multiple()
-    plot(model, 'model_multiple.png')
+    viz_model(model, 'results/model_multiple.pdf')
 
     model = model_merged()
-    plot(model, 'model_merged.png')
+    viz_model(model, 'results/model_merged.pdf')
 
     model = model_mlp()
-    plot(model, 'model_mlp.png')
+    viz_model(model, 'results/model_mlp.pdf')
 
     model = model_vggnet()
-    plot(model, 'model_vggnet.png')
+    viz_model(model, 'results/model_vggnet.pdf')
 
     model = model_image_caption()
-    plot(model, 'model_image_caption.png')
+    viz_model(model, 'results/model_image_caption.pdf')
 
     model = model_lstm()
-    plot(model, 'model_lstm.png')
+    viz_model(model, 'results/model_lstm.pdf')
 
     model = model_lstm_stacked()
-    plot(model, 'model_lstm_stacked.png')
+    viz_model(model, 'results/model_lstm_stacked.pdf')
 
     model = model_lstm_stateful()
-    plot(model, 'model_lstm_stateful.png')
+    viz_model(model, 'results/model_lstm_stateful.pdf')
 
     model = model_lstm_merged()
-    plot(model, 'model_lstm_merged.png')
+    viz_model(model, 'results/model_lstm_merged.pdf')
