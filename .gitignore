@@ -1,6 +1,6 @@
 *.DS_Store
 
-data/*
+soccer_analysis/data/*
 learn_keras/results/*
 learn_keras/logs/*
 
