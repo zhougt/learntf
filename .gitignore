@@ -2,6 +2,7 @@
 
 data/*
 learn_keras/results/*
+learn_keras/logs/*
 
 *.pyc
 *.ipynb
