@@ -36,7 +36,7 @@ def tf_board():
         loss='binary_crossentropy',
         metrics=['accuracy'])
 
-    board = TensorBoard(log_dir='logs', histogram_freq=0, write_graph=True)
+    board = TensorBoard(log_dir='logs', histogram_freq=1, write_graph=True)
 
     data = np.random.random((1000, 784))
     labels = np.random.randint(2, size=(1000, 1))
