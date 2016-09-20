@@ -3,6 +3,7 @@
 soccer_analysis/data/*
 learn_keras/results/*
 learn_keras/logs/*
+learn_keras/MNIST_data/*
 
 *.pyc
 *.ipynb
